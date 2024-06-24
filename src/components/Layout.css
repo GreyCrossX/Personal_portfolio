@@ -1,0 +1,152 @@
+/*src/components/Layout.css*/
+/* Layout Container */
+.layout {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--background);
+
+}
+
+/* Solid Background */
+.solid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  z-index: 0;
+}
+
+html.dark .solid-background {
+  background-color: var(--background);
+}
+
+/* Content Frame */
+.content-frame {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 4%;
+  bottom: 4%;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+html.dark .content-frame {
+  border-color: var(--text);
+}
+
+/* Translucent Background */
+.translucent-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+}
+
+html.dark .translucent-background {
+  background-color: rgba(12, 12, 14, 0.7);
+}
+
+/* Content Container */
+.content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  overflow: auto;
+}
+
+/* Theme Switch */
+.theme-switch {
+  position: absolute;
+  right: 1%;
+  top: 2%;
+  align-items: center;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.theme-switch span {
+  margin-left: 0.5rem;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  z-index: 4;
+  margin: 16px;
+  flex-direction: column;
+  pointer-events: all;
+  bottom: 0;
+  padding-bottom: 8px;
+  font-size: large;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 40px;
+}
+
+nav ul li {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+nav ul li:active {
+  color:red
+}
+
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .content-frame {
+    left: 3%;
+    right: 3%;
+    top: 3%;
+    bottom: 3%;
+  }
+
+  .navbar {
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-frame {
+    left: 2%;
+    right: 2%;
+    top: 2%;
+    bottom: 2%;
+  }
+
+  .navbar {
+    padding-bottom: 5px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
